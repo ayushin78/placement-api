@@ -16,13 +16,19 @@ app.post('/companies', (req, res) => {
   });
 
   company.save().then((company) => {
-    res.send(company)
+    res.status(200).send(company)
   }).catch((e) => {
     res.status(400).send(e);
   })
 });
 
-
+app.get('/companies', (req, res) => {
+  Company.find({}).then((companies) => {
+    res.status(200).send(companies);
+  }).catch((e) => {
+    res.send(400).send(e);
+  })
+});
 app.listen(port, () => {
   console.log(`app started on server ${port}`);
 });
