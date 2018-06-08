@@ -1,0 +1,14 @@
+{
+  "name": "placement-api",
+  "version": "1.0.0",
+  "description": "A server application that can be used for registering students and companies for a placement event at an institute.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Ayushi Negi",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^6.1.0"
+  }
+}
