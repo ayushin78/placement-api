@@ -9,6 +9,10 @@
   "author": "Ayushi Negi",
   "license": "ISC",
   "dependencies": {
-    "npm": "^6.1.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.4",
+    "npm": "^6.1.0",
+    "validator": "^10.3.0"
   }
 }
