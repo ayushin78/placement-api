@@ -64,3 +64,46 @@ describe('POST /companies', () => {
     });
   });
 });
+
+describe('GET /companies', () => {
+  it('should get the list of all the registered companies in array', (done) => {
+    request(app)
+    .get('/companies')
+    .expect(200)
+    .expect((res) => {
+      expect(res.body.length).toBe(2);
+      expect(res.body[0].name).toBe(companies[0].name);
+    })
+    .end(done);
+  });
+});
+
+describe('DELETE /companies/:companyName', () => {
+  it('should unregister the specified company', (done) => {
+    var companyName = companies[0].name;
+
+    request(app)
+    .delete(`/companies/${companyName}`)
+    .expect(200)
+    .expect((res) => {
+      expect(res.body.name).toBe(companyName);
+    })
+    .end((err, res) => {
+      if(err){
+        return done(err);
+      }
+      Company.find({name : companyName}).then((companies) => {
+        expect(companies.length).toBe(0);
+        done();
+      }).catch((e) => done());
+    });
+  });
+
+  it('should get the 404 if the company is not registered', (done) => {
+
+    request(app)
+    .delete('/companies/companyThree')
+    .expect(404)
+    .end(done);
+  });
+});
