@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
+const {companySchema} = require('./company');
 
 var studentSchema = new mongoose.Schema({
   name : {
@@ -33,6 +34,7 @@ var studentSchema = new mongoose.Schema({
     minlength: 6,
     required: true
   },
+  registeredCompanies : [companySchema],
   tokens:[{
     access : {
       type : String,

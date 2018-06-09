@@ -4,15 +4,19 @@
   "description": "A server application that can be used for registering students and companies for a placement event at an institute.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha server/**/*.test.js"
   },
   "author": "Ayushi Negi",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "expect": "^22.4.3",
     "express": "^4.16.3",
+    "mocha": "^5.2.0",
     "mongoose": "^5.1.4",
+    "nodemon": "^1.17.5",
     "npm": "^6.1.0",
+    "supertest": "^3.1.0",
     "validator": "^10.3.0"
   }
 }

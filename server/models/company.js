@@ -11,4 +11,4 @@ var companySchema = new mongoose.Schema({
 
 var Company = mongoose.model('Company',companySchema);
 
-module.exports = {Company};
+module.exports = {Company, companySchema};
